@@ -1,0 +1,265 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cedarville+Cursive&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Main container */
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* ===== LEFT SECTION (Sky + Clouds) ===== */
+.login-left {
+  position: relative;
+  flex: 1;
+  background: linear-gradient(to bottom right, #01b0f0, #ace4f8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Brand text */
+.login-left .brand {
+  font-size: 4.8rem;
+  font-weight: 1700;
+  margin-bottom: 10px;
+  z-index: 2;
+  font-family: "Archivo Black", sans-serif
+}
+
+.login-left .welcome {
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+/* ===== ☁️ Cloud Animations ===== */
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.9;
+  filter: blur(2px);
+  animation: moveClouds 80s linear infinite;
+}
+
+/* Each cloud cluster (made of multiple circles) */
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.cloud1 {
+  width: 120px;
+  height: 60px;
+  top: 20%;
+  left: -150px;
+  animation-duration: 90s;
+}
+.cloud1::before {
+  width: 70px;
+  height: 70px;
+  top: -20px;
+  left: 30px;
+}
+.cloud1::after {
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  left: 80px;
+}
+
+.cloud2 {
+  width: 180px;
+  height: 80px;
+  top: 50%;
+  left: -200px;
+  animation-duration: 100s;
+  animation-delay: 10s;
+}
+.cloud2::before {
+  width: 90px;
+  height: 90px;
+  top: -25px;
+  left: 40px;
+}
+.cloud2::after {
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: 100px;
+}
+
+.cloud3 {
+  width: 150px;
+  height: 70px;
+  top: 75%;
+  left: -180px;
+  animation-duration: 120s;
+  animation-delay: 20s;
+}
+.cloud3::before {
+  width: 80px;
+  height: 80px;
+  top: -15px;
+  left: 35px;
+}
+.cloud3::after {
+  width: 55px;
+  height: 55px;
+  top: 5px;
+  left: 85px;
+}
+
+@keyframes moveClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200vw);
+  }
+}
+
+/* ===== RIGHT SECTION ===== */
+.login-right {
+  flex: 1;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 380px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.login-text {
+  font-size: 15px;
+  color: #888;
+  margin-bottom: 25px;
+}
+
+/* Input Fields */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+}
+
+.input-group i {
+  color: #999;
+  margin-right: 10px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  background: linear-gradient(to right, #01b0f0, #ace4f8);
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+/* Register */
+.register-text {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #777;
+}
+
+.register-text a {
+  color: #01b0f0;
+  text-decoration: none;
+  font-weight: 600;
+}
+/* Multiple planes with smooth diagonal motion and white trail */
+.plane {
+  position: absolute;
+  font-size: 50px; /* increased size */
+  color: #01b0f0;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* White trail using pseudo-element */
+.plane::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  top: 50%;
+  left: -80px;
+  transform: rotate(-15deg);
+  transform-origin: left ;
+  border-radius: 2px;
+}
+
+/* Individual plane animations */
+.plane1 { top: 30px; left: -50px; animation: fly 10s linear infinite; font-size: 155px; }
+.plane2 { top: 100px; left: -80px; animation: fly 12s linear infinite; font-size: 45px; }
+.plane3 { top: 180px; left: -60px; animation: fly 14s linear infinite; font-size: 50px; }
+.plane4 { top: 250px; left: -100px; animation: fly 11s linear infinite; font-size: 60px; }
+.plane5 { top: 320px; left: -70px; animation: fly 13s linear infinite; font-size: 50px; }
+.plane6 { top: 400px; left: -90px; animation: fly 15s linear infinite; font-size: 55px; }
+
+/* Flight animation (diagonal) */
+@keyframes fly {
+  0% { transform: translate(0, 0) rotate(10deg); }
+  50% { transform: translate(100px, -50px) rotate(15deg); }
+  100% { transform: translate(1800px, 0) rotate(10deg); }
+}

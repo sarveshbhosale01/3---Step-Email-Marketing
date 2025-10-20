@@ -1,0 +1,338 @@
+/* Upload card inherits intro-card style */
+.upload-card {
+  background: #d5f2fc;
+  padding: 50px 40px;
+  border-radius: 25px;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 15px 40px rgba(0,0,0,0.12);
+  position: relative;
+  z-index: 2;
+  margin-left: 350px;
+  margin-top: 20px;
+}
+
+.upload-disclaimer {
+  background: #eaf6fc;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #01b0f0;
+  text-align: left;
+}
+
+.upload-disclaimer h4 {
+  color: #01b0f0;
+  margin-bottom: 10px;
+}
+
+.upload-disclaimer ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.upload-disclaimer p {
+  color: #005c8f;
+  font-size: 0.95rem;
+}
+
+/* Adjust table preview */
+.preview-table {
+  margin-bottom: 20px;
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 15px;
+  border: 1px solid #01b0f0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.preview-table table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+/* File input style */
+.file-input {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px dashed #01b0f0;
+  background: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+
+.file-input:hover {
+  border-color: #0082b1;
+}
+.planes-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Paper plane styles */
+.paper-plane {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 5;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.plane-body {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #01b0f0;
+  position: relative;
+}
+
+.plane-wing {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #01b0f0;
+  top: 10px;
+  left: -10px;
+}
+
+/* Trail styles */
+.trail {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: white;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Animation for plane 1 */
+@keyframes fly1 {
+  0% {
+    transform: translate(-100px, 100px) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(120vw, -100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for trail 1 */
+@keyframes trail1 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Animation for plane 2 */
+@keyframes fly2 {
+  0% {
+    transform: translate(110vw, 80vh) rotate(-30deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-100px, -100px) rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for trail 2 */
+@keyframes trail2 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Animation for plane 3 */
+@keyframes fly3 {
+  0% {
+    transform: translate(50vw, -50px) rotate(15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50vw, 110vh) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for trail 3 */
+@keyframes trail3 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Animation for plane 4 */
+@keyframes fly4 {
+  0% {
+    transform: translate(-50px, 50vh) rotate(-60deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(110vw, 80vh) rotate(-60deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for trail 4 */
+@keyframes trail4 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Animation for plane 5 */
+@keyframes fly5 {
+  0% {
+    transform: translate(80vw, 110vh) rotate(75deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-100px, -100px) rotate(75deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for trail 5 */
+@keyframes trail5 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Apply animations to planes and trails */
+.plane1 {
+  animation: fly1 15s linear infinite;
+}
+
+.trail1 {
+  animation: trail1 15s linear infinite;
+  transform: rotate(45deg);
+  top: 100px;
+  left: 0;
+}
+
+.plane2 {
+  animation: fly2 18s linear infinite;
+  animation-delay: 2s;
+}
+
+.trail2 {
+  animation: trail2 18s linear infinite;
+  animation-delay: 2s;
+  transform: rotate(-30deg);
+  top: 80vh;
+  right: 0;
+}
+
+.plane3 {
+  animation: fly3 20s linear infinite;
+  animation-delay: 5s;
+}
+
+.trail3 {
+  animation: trail3 20s linear infinite;
+  animation-delay: 5s;
+  transform: rotate(15deg);
+  top: -50px;
+  left: 50vw;
+}
+
+.plane4 {
+  animation: fly4 16s linear infinite;
+  animation-delay: 8s;
+}
+
+.trail4 {
+  animation: trail4 16s linear infinite;
+  animation-delay: 8s;
+  transform: rotate(-60deg);
+  top: 50vh;
+  left: -50px;
+}
+
+.plane5 {
+  animation: fly5 22s linear infinite;
+  animation-delay: 12s;
+}
+
+.trail5 {
+  animation: trail5 22s linear infinite;
+  animation-delay: 12s;
+  transform: rotate(75deg);
+  bottom: 0;
+  right: 80vw;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 20px 16px;
+  }
+  
+  .intro-card {
+    padding: 30px 20px;
+  }
+  
+  .intro-title {
+    font-size: 2.2rem;
+  }
+  
+  .steps-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .step {
+    padding: 20px 15px;
+  }
+  
+  .continue-btn {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,445 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main page container - FIXED SCROLLING */
+.intro-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d5f2fc, #d5f2fc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Planes background - fixed position so they don't interfere with scrolling */
+.planes-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Intro section - regular flow */
+.intro-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Reviews section - regular flow */
+.reviews-section {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  background: white;
+}
+
+/* Intro card with gentle shadows for focus */
+.intro-card {
+  background: #d5f2fc;
+  padding: 50px 40px;
+  border-radius: 25px;
+  max-width: 1500px;
+  width: 100%;
+  text-align: center;
+  animation: cardPop 0.7s ease forwards;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Card pop animation */
+@keyframes cardPop {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Title with friendly tone */
+.intro-title {
+  font-size: 2.8rem;
+  color: #01b0f0;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.08);
+}
+
+/* Subtitle with guiding tone */
+.intro-subtitle {
+  font-size: 1.15rem;
+  color: #000000;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* Steps layout: responsive and flowing */
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+/* Individual step with gentle highlight effect */
+.step {
+  background: #d5f2fc;
+  padding: 25px 20px;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.4s ease;
+  cursor: default;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* Step hover emphasizes explanation */
+.step:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  background: #adf9f9;
+}
+
+/* Step number badge for guiding feel */
+.step::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 40px;
+  height: 40px;
+  background: #01b0f0;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Icon animation for emphasis */
+.step-icon {
+  font-size: 2.3rem;
+  color: #01b0f0;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.step:hover .step-icon {
+  transform: rotate(10deg);
+  color: #01b0f0;
+}
+
+/* Step heading */
+.step h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #0082b1;
+  font-weight: 600;
+}
+
+/* Step explanation paragraph */
+.step p {
+  font-size: 1rem;
+  color: #01b0f0;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Continue button with guiding arrow */
+.continue-btn {
+  background: linear-gradient(135deg, #01b0f0, #ace4f8);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 35px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  position: relative;
+  z-index: 10;
+}
+
+.continue-btn:hover {
+  background: linear-gradient(135deg, #01b0f0, #ace4f8);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* Counter reset for step numbers */
+.steps-container { 
+  counter-reset: step-counter; 
+}
+
+/* Paper plane styles */
+.paper-plane {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 5;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.plane-body {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #01b0f0;
+  position: relative;
+}
+
+.plane-wing {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #01b0f0;
+  top: 10px;
+  left: -10px;
+}
+
+/* Trail styles */
+.trail {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: white;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Animation for plane 1 */
+@keyframes fly1 {
+  0% {
+    transform: translate(-100px, 100px) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(120vw, -100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for trail 1 */
+@keyframes trail1 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Animation for plane 2 */
+@keyframes fly2 {
+  0% {
+    transform: translate(110vw, 80vh) rotate(-30deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-100px, -100px) rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for trail 2 */
+@keyframes trail2 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Animation for plane 3 */
+@keyframes fly3 {
+  0% {
+    transform: translate(50vw, -50px) rotate(15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50vw, 110vh) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for trail 3 */
+@keyframes trail3 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Animation for plane 4 */
+@keyframes fly4 {
+  0% {
+    transform: translate(-50px, 50vh) rotate(-60deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(110vw, 80vh) rotate(-60deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for trail 4 */
+@keyframes trail4 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Animation for plane 5 */
+@keyframes fly5 {
+  0% {
+    transform: translate(80vw, 110vh) rotate(75deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-100px, -100px) rotate(75deg);
+    opacity: 0;
+  }
+}
+
+/* Animation for trail 5 */
+@keyframes trail5 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Apply animations to planes and trails */
+.plane1 {
+  animation: fly1 15s linear infinite;
+}
+
+.trail1 {
+  animation: trail1 15s linear infinite;
+  transform: rotate(45deg);
+  top: 100px;
+  left: 0;
+}
+
+.plane2 {
+  animation: fly2 18s linear infinite;
+  animation-delay: 2s;
+}
+
+.trail2 {
+  animation: trail2 18s linear infinite;
+  animation-delay: 2s;
+  transform: rotate(-30deg);
+  top: 80vh;
+  right: 0;
+}
+
+.plane3 {
+  animation: fly3 20s linear infinite;
+  animation-delay: 5s;
+}
+
+.trail3 {
+  animation: trail3 20s linear infinite;
+  animation-delay: 5s;
+  transform: rotate(15deg);
+  top: -50px;
+  left: 50vw;
+}
+
+.plane4 {
+  animation: fly4 16s linear infinite;
+  animation-delay: 8s;
+}
+
+.trail4 {
+  animation: trail4 16s linear infinite;
+  animation-delay: 8s;
+  transform: rotate(-60deg);
+  top: 50vh;
+  left: -50px;
+}
+
+.plane5 {
+  animation: fly5 22s linear infinite;
+  animation-delay: 12s;
+}
+
+.trail5 {
+  animation: trail5 22s linear infinite;
+  animation-delay: 12s;
+  transform: rotate(75deg);
+  bottom: 0;
+  right: 80vw;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 20px 16px;
+  }
+  
+  .intro-card {
+    padding: 30px 20px;
+  }
+  
+  .intro-title {
+    font-size: 2.2rem;
+  }
+  
+  .steps-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .step {
+    padding: 20px 15px;
+  }
+  
+  .continue-btn {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+}

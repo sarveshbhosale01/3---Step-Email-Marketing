@@ -1,0 +1,40 @@
+{
+  "email_templates": [
+    {
+      "id": 1,
+      "name": "Restaurant Ventilation Solution",
+      "subject": "Better Kitchen Ventilation for Your Restaurant",
+      "content": "Hi [Business Name], We help restaurants like yours maintain optimal kitchen environments. Key benefits you'll get: • Eliminate cooking odors and heat • Improve air quality for staff and customers • Reduce energy costs • Comply with health regulations Let's discuss how we can enhance your kitchen ventilation. Best, LG Home Comfort Team (555) 123-4567"
+    },
+    {
+      "id": 2,
+      "name": "Office HVAC Upgrade",
+      "subject": "Modern Climate Control for Your Office Space",
+      "content": "Hello [Business Name] Team, Common office challenges we solve: • Inconsistent temperatures across floors • High electricity bills • Poor air circulation • Aging HVAC equipment Our commercial systems provide zoned comfort and energy savings. Quick assessment this week? LG Commercial Solutions solutions@lghomecomfort.com"
+    },
+    {
+      "id": 3,
+      "name": "Retail Store Comfort",
+      "subject": "Enhanced Customer Comfort for Your Retail Store",
+      "content": "Three ways we help retail businesses like yours: 1. Maintain perfect shopping temperatures 2. Reduce operational costs 3. Improve air quality for customers and staff Efficient systems designed for retail environments. Ready to upgrade your store comfort? (555) 123-4567 LG Retail Comfort"
+    },
+    {
+      "id": 4,
+      "name": "Warehouse Climate Control",
+      "subject": "Climate Solutions for Your Warehouse",
+      "content": "Hi there, Experiencing any of these in your warehouse? • Temperature extremes affecting inventory? • High humidity damaging products? • Energy costs impacting margins? • Employee comfort concerns? We specialize in industrial climate solutions. Site evaluation available. Best regards, LG Industrial Systems Team"
+    },
+    {
+      "id": 5,
+      "name": "Medical Facility Air Quality",
+      "subject": "Healthcare-Grade Air Solutions",
+      "content": "We provide specialized HVAC systems for medical facilities. Critical benefits: - HEPA filtration for clean air - Precise temperature and humidity control - Energy-efficient operation - Compliance with healthcare standards Protect your patients and staff with optimal air quality. LG Medical Systems (555) 123-4567"
+    },
+    {
+      "id": 6,
+      "name": "Hotel & Hospitality Comfort",
+      "subject": "Guest Comfort Solutions for Your Hotel",
+      "content": "Enhance your guest experience with our hospitality HVAC solutions. Features include: • Quiet, efficient room climate control • Central system optimization • Energy cost reduction • 24/7 monitoring and support Perfect for hotels, resorts, and hospitality venues. Consultation available. LG Hospitality Division"
+    }
+  ]
+}

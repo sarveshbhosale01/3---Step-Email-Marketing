@@ -1,0 +1,619 @@
+/* Reviews.css - Updated to match Introduction page styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main reviews container */
+.reviews-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d5f2fc, #d5f2fc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Paper planes background */
+.reviews-planes-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Main reviews card */
+.reviews-card {
+  background: #d5f2fc;
+  padding: 50px 40px;
+  border-radius: 25px;
+  max-width: 1500px;
+  width: 100%;
+  animation: cardPop 0.7s ease forwards;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.12);
+  border: 2px solid #e6f7ff;
+}
+
+/* Card pop animation */
+@keyframes cardPop {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.reviews-header h1 {
+  font-size: 2.8rem;
+  color: #01b0f0;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.08);
+}
+
+.ratings-overview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  background: #d5f2fc;
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border: 2px solid #e6f7ff;
+}
+
+.overall-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rating-label {
+  font-size: 1rem;
+  color: #0082b1;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.rating-score {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #01b0f0;
+}
+
+.platform-ratings {
+  display: flex;
+  gap: 30px;
+}
+
+.platform-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.platform-rating:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.platform-icon {
+  width: 35px;
+  height: 35px;
+  background: #01b0f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 12px rgba(1, 176, 240, 0.3);
+}
+
+.divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #01b0f0, transparent);
+  margin: 40px 0;
+  border: none;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.review-card {
+  background: #d5f2fc;
+  padding: 25px 20px;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border: 2px solid #e6f7ff;
+  cursor: pointer;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  background: #f0fbff;
+  border-color: #01b0f0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.reviewer-info {
+  flex: 1;
+}
+
+.reviewer-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #0082b1;
+}
+
+.review-title {
+  font-size: 1rem;
+  color: #01b0f0;
+  display: block;
+  font-weight: 500;
+}
+
+.review-rating {
+  color: #ffc107;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.after-text {
+  font-size: 0.95rem;
+  color: #01b0f0;
+  font-style: italic;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.review-tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  background: #01b0f0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(1, 176, 240, 0.3);
+}
+
+.review-content {
+  margin-bottom: 20px;
+}
+
+.review-content p {
+  margin: 0 0 15px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333333;
+}
+
+.read-more {
+  background: linear-gradient(135deg, #01b0f0, #00a0e0);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(1, 176, 240, 0.3);
+}
+
+.read-more:hover {
+  background: linear-gradient(135deg, #00a0e0, #0190d0);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(1, 176, 240, 0.4);
+}
+
+.review-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #666666;
+  padding-top: 15px;
+  border-top: 1px solid #e6f7ff;
+}
+
+.posted-on {
+  color: #01b0f0;
+  font-weight: 500;
+}
+
+.platform {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.platform-facebook {
+  background: #1877f2;
+  color: white;
+}
+
+.platform-google {
+  background: #db4437;
+  color: white;
+}
+
+.platform-amazon {
+  background: #ff9900;
+  color: white;
+}
+
+.load-more-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.load-more {
+  background: linear-gradient(135deg, #01b0f0, #ace4f8);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.load-more:hover {
+  background: linear-gradient(135deg, #01b0f0, #ace4f8);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* Paper plane styles */
+.paper-plane {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 5;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.plane-body {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #01b0f0;
+  position: relative;
+}
+
+.plane-wing {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #01b0f0;
+  top: 10px;
+  left: -10px;
+}
+
+/* Trail styles */
+.trail {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: white;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Plane animations */
+@keyframes fly1 {
+  0% {
+    transform: translate(-100px, 100px) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(120vw, -100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fly2 {
+  0% {
+    transform: translate(110vw, 80vh) rotate(-30deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-100px, -100px) rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fly3 {
+  0% {
+    transform: translate(50vw, -50px) rotate(15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50vw, 110vh) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fly4 {
+  0% {
+    transform: translate(-50px, 50vh) rotate(-60deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(110vw, 80vh) rotate(-60deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fly5 {
+  0% {
+    transform: translate(80vw, 110vh) rotate(75deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-100px, -100px) rotate(75deg);
+    opacity: 0;
+  }
+}
+
+/* Trail animations */
+@keyframes trail1 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+@keyframes trail2 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+@keyframes trail3 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+@keyframes trail4 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+@keyframes trail5 {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+}
+
+/* Apply animations */
+.plane1 {
+  animation: fly1 15s linear infinite;
+}
+
+.trail1 {
+  animation: trail1 15s linear infinite;
+  transform: rotate(45deg);
+  top: 100px;
+  left: 0;
+}
+
+.plane2 {
+  animation: fly2 18s linear infinite;
+  animation-delay: 2s;
+}
+
+.trail2 {
+  animation: trail2 18s linear infinite;
+  animation-delay: 2s;
+  transform: rotate(-30deg);
+  top: 80vh;
+  right: 0;
+}
+
+.plane3 {
+  animation: fly3 20s linear infinite;
+  animation-delay: 5s;
+}
+
+.trail3 {
+  animation: trail3 20s linear infinite;
+  animation-delay: 5s;
+  transform: rotate(15deg);
+  top: -50px;
+  left: 50vw;
+}
+
+.plane4 {
+  animation: fly4 16s linear infinite;
+  animation-delay: 8s;
+}
+
+.trail4 {
+  animation: trail4 16s linear infinite;
+  animation-delay: 8s;
+  transform: rotate(-60deg);
+  top: 50vh;
+  left: -50px;
+}
+
+.plane5 {
+  animation: fly5 22s linear infinite;
+  animation-delay: 12s;
+}
+
+.trail5 {
+  animation: trail5 22s linear infinite;
+  animation-delay: 12s;
+  transform: rotate(75deg);
+  bottom: 0;
+  right: 80vw;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .reviews-container {
+    padding: 20px 16px;
+  }
+  
+  .reviews-card {
+    padding: 30px 20px;
+  }
+  
+  .reviews-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .ratings-overview {
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+  }
+  
+  .platform-ratings {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .platform-rating {
+    padding: 10px 15px;
+  }
+  
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .review-card {
+    padding: 20px 15px;
+  }
+  
+  .load-more {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-header h1 {
+    font-size: 1.9rem;
+  }
+  
+  .rating-score {
+    font-size: 1.7rem;
+  }
+  
+  .platform-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  .reviewer-name {
+    font-size: 1.1rem;
+  }
+}
+/* Feedback button styling */
+.feedback-btn {
+  position: absolute;
+  top: 20px;
+  right: 570px;
+  background: linear-gradient(135deg, #01b0f0, #00a0e0);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(1,176,240,0.3);
+  transition: all 0.3s ease;
+  z-index: 15; /* above planes */
+}
+
+.feedback-btn:hover {
+  background: linear-gradient(135deg, #00a0e0, #0190d0);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(1,176,240,0.4);
+}
